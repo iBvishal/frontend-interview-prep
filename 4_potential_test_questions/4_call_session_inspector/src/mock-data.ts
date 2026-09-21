@@ -1,0 +1,66 @@
+import type { CallSession } from './types';
+
+export const INITIAL_CALL_SESSION: CallSession = {
+  callId: 'call-sess-9021',
+  from: '+1 (415) 555-0199',
+  to: '+1 (202) 555-0143',
+  state: 'CONNECTED',
+  events: [
+    {
+      id: 'ev-1',
+      timestampSec: 0.0,
+      category: 'SIP',
+      level: 'info',
+      title: 'SIP INVITE Sent',
+      details: { callId: 'call-sess-9021', from: 'sip:+14155550199@livekit.cloud', cseq: '1 INVITE' },
+    },
+    {
+      id: 'ev-2',
+      timestampSec: 0.4,
+      category: 'SIP',
+      level: 'info',
+      title: '180 Ringing Received',
+      details: { carrier: 'Telnyx SBC', responseTimeMs: 400 },
+    },
+    {
+      id: 'ev-3',
+      timestampSec: 1.5,
+      category: 'SIP',
+      level: 'info',
+      title: '200 OK (Call Answered)',
+      details: { codec: 'Opus 48kHz', sdpNegotiated: true },
+    },
+    {
+      id: 'ev-4',
+      timestampSec: 1.8,
+      category: 'PARTICIPANT',
+      level: 'info',
+      title: 'Callee Joined LiveKit Room',
+      details: { participantIdentity: 'sip-pstn-agent-1', room: 'telephony-call-9021' },
+    },
+    {
+      id: 'ev-5',
+      timestampSec: 2.2,
+      category: 'MEDIA',
+      level: 'info',
+      title: 'Audio Track Subscribed',
+      details: { trackSid: 'TR_aud_99812', sampleRate: 48000, channels: 2 },
+    },
+    {
+      id: 'ev-6',
+      timestampSec: 5.4,
+      category: 'MEDIA',
+      level: 'info',
+      title: 'DTMF Keypad Pressed: "1"',
+      details: { tone: '1', durationMs: 160, volume: 10 },
+    },
+    {
+      id: 'ev-7',
+      timestampSec: 8.1,
+      category: 'ERROR',
+      level: 'warn',
+      title: 'Jitter Buffer Spike Warning',
+      details: { jitterMs: 48, packetLossPct: 3.2, recommendation: 'PLC (Packet Loss Concealment) enabled' },
+    },
+  ],
+};

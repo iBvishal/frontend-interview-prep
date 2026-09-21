@@ -1,0 +1,61 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: system-ui, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Header & Stat Cards */
+.top-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.top-nav h1 { font-size: 18px; font-weight: 600; color: #38bdf8; }
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+.stat-card { background: #1e293b; border: 1px solid #334155; padding: 12px; border-radius: 6px; }
+.stat-label { font-size: 11px; color: #94a3b8; text-transform: uppercase; margin-bottom: 4px; }
+.stat-value { font-size: 18px; font-weight: 700; font-family: monospace; }
+.badge-degraded { color: #f43f5e; }
+.badge-good { color: #10b981; }
+
+/* Chart Container */
+.chart-box {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.chart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.chart-title { font-size: 14px; font-weight: 600; }
+.toggles { display: flex; gap: 12px; font-size: 12px; }
+.toggle-label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+
+.svg-chart { width: 100%; height: 100%; overflow: visible; }
+.axis-line { stroke: #334155; stroke-width: 1; }
+.grid-line { stroke: #1e293b; stroke-dasharray: 4 4; }
+.axis-text { fill: #94a3b8; font-size: 10px; font-family: monospace; }
+
+.line-loss { stroke: #06b6d4; stroke-width: 2.5; fill: none; }
+.line-jitter { stroke: #f59e0b; stroke-width: 2; stroke-dasharray: 4 2; fill: none; }
+.threshold-line { stroke: #f43f5e; stroke-width: 1.5; stroke-dasharray: 6 4; }
+
+/* Tooltip Scrubber */
+.crosshair { stroke: #cbd5e1; stroke-width: 1; stroke-dasharray: 2 2; pointer-events: none; }
+.tooltip {
+  position: absolute;
+  background: #0b0f19;
+  border: 1px solid #475569;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: monospace;
+  font-size: 11px;
+  pointer-events: none;
+  display: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  z-index: 10;
+}

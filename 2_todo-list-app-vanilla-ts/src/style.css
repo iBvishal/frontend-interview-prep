@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Board Container - Horizontal Scroll */
+.board {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  overflow-x: auto;
+  min-height: 100vh;
+}
+
+/* Individual Column */
+.column {
+  background-color: #e2e8f0;
+  border-radius: 10px;
+  width: 300px;
+  min-width: 300px;
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Column Header */
+.column-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  padding: 4px 6px 12px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column-title input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  margin-bottom: 6px;
+}
+
+.card-count-badge {
+  background-color: #cbd5e1;
+  color: #334155;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+/* Column Cards List (Vertical Scroll if column gets long) */
+.column-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  flex: 1;
+  padding: 2px;
+  min-height: 20px;
+}
+
+/* Card Item */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.card-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #0f172a;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #64748b;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 6px;
+}
+
+/* Card Action Buttons */
+.card-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.card-actions button,
+.add-card-btn,
+.add-column-btn {
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #475569;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.card-actions button:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.card-actions .delete-card-btn:hover {
+  background-color: #fee2e2;
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+
+/* Add Card Container */
+.add-card-container {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-card-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.add-card-input:focus,
+.column-title input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.add-card-btn,
+.add-column-btn {
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+  align-self: flex-start;
+}
+
+.add-card-btn:hover,
+.add-column-btn:hover {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+/* Add New Column Box */
+.add-column-box {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px dashed #cbd5e1;
+  border-radius: 10px;
+  width: 300px;
+  min-width: 300px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

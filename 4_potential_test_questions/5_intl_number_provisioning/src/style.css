@@ -1,0 +1,78 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: system-ui, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.header h1 { font-size: 18px; color: #38bdf8; margin-bottom: 16px; }
+
+.grid-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; flex: 1; }
+
+.card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+select, input {
+  width: 100%;
+  background: #0f172a;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 13px;
+  outline: none;
+}
+select:focus, input:focus { border-color: #38bdf8; }
+
+/* Number Selection Cards */
+.number-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f172a;
+  border: 1px solid #334155;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.number-item:hover { border-color: #38bdf8; }
+.number-item.selected { border-color: #38bdf8; background: rgba(6, 182, 212, 0.1); }
+
+.badge { font-size: 10px; font-family: monospace; padding: 2px 6px; border-radius: 4px; background: #334155; color: #94a3b8; }
+
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-label { font-size: 12px; font-weight: 600; color: #cbd5e1; }
+
+.btn-primary {
+  background: #0284c7;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+.btn-primary:hover { background: #0369a1; }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.alert {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid #f59e0b;
+  color: #fbbf24;
+}
